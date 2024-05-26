@@ -82,6 +82,10 @@ main().then(()=>{
 async function main() {
   await mongoose.connect(dbUrl);}
 
+  app.get("/",(req,res)=>{
+    res.render("/listings");
+  });
+
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
