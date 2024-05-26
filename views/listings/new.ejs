@@ -1,0 +1,70 @@
+<%layout('layouts/boilerplate')-%>
+<body>
+    <div class="row mt-4">
+        <div class="col-8 offset-2">
+        
+    <h3>Create New Listing</h3>
+    
+    
+        <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+            <div class="mb-3">
+            <label for="title" class="form-label" >Title</label>
+            <input type="text" placeholder="Add a catchy title" name="listing[title]" class="form-control" required>
+            <div class="valid-feedback">Looks Good!</div>
+            </div>
+
+            <div>
+                <label for="description" class="form-label" >Description</label>
+                <textarea class="form-control" name="listing[description]" required></textarea>
+                <div class="invalid-feedback">Please enter a short description</div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label" >Upload Listing Image</label>
+                <input type="file" name="listing[image]" class="form-control" >
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label" >Select Listing Category</label>
+                <select class="form-select form-control" name="listing[category]" required >
+                    <option selected>Category</option>
+                    <option value="rooms">Rooms</option>
+                    <option value="cities">Iconic cities</option>
+                    <option value="mountains">Mountains</option>
+                    <option value="castles">Castles</option>
+                    <option value="treehouse">Treehouse</option>
+                    <option value="arctic">Arctic</option>
+                    <option value="beach">Beach</option>
+                    <option value="desert">Desert</option>
+                    <option value="historic homes">Historic homes</option>
+                    <option value='lakes'>Lakes</option>
+                    <option value="others">Others</option>
+                  </select>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-4" >
+                    <label for="price" class="form-label" >Price</label>
+                    <input type="number" placeholder="eg. 1200" name="listing[price]" class="form-control" required>
+                    <div class="invalid-feedback">Price should be valid</div>
+                </div>
+                
+                
+                <div class="mb-3 col-md-8">
+                    <label for="location" class="form-label" >Location</label>
+                    <input type="text" placeholder="eg. Jaipur,Rajasthan" name="listing[location]" class="form-control "required>
+                    <div class="invalid-feedback">Location should be valid</div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="mb-3">
+                <label for="country" class="form-label" >Country</label>
+                <input type="text" placeholder="eg. India" name="listing[country]" class="form-control" required>
+                <div class="invalid-feedback">Country name should be valid </div>
+            </div>
+            <button class="btn btn-dark add-btn mt-4">Add</button>
+            <br> <br>
+        </form>
+    </div>
+    </div>
+    
+</body>
